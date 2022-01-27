@@ -18,16 +18,16 @@ spec:
           sessionStoreType: redis
           redisStore:
             connectionUrl: redis://redis:6379
-        variables:
-          ASPNETCORE_URLS: http://*:5005
-        ports:
-          - name: http
-            port: 5005
-        publicPort: http
-        resources:
-          requests:
-            memory: "300Mi"
-            cpu: "1000m"
+      variables:
+        ASPNETCORE_URLS: http://*:5005
+      ports:
+        - name: http
+          port: 5005
+      publicPort: http
+      resources:
+        requests:
+          memory: "300Mi"
+          cpu: "1000m"
     - name: redis
       image: bitnami/redis:latest
       secrets:
