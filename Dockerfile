@@ -19,4 +19,4 @@ COPY --from=build /app ./
 RUN adduser -D --uid 1001 radix-non-root-user
 USER 1001
 
-ENTRYPOINT ["dotnet", "aspnet-webapp.dll"]
+ENTRYPOINT ["dotnet", "radix-example-oauth2-feature.dll"]
