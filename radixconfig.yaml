@@ -56,8 +56,8 @@ spec:
           redisStore:
             connectionUrl: redis://redis:6379
           cookie:
-            expire: 2m
-            refresh: 0
+            expire: 5m
+            refresh: 1m
       variables:
         ASPNETCORE_URLS: http://*:5005
       ports:
