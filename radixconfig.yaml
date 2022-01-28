@@ -55,9 +55,11 @@ spec:
           sessionStoreType: cookie
           redisStore:
             connectionUrl: redis://redis:6379
+          cookieStore:
+            minimal: true
           cookie:
-            expire: 5m
-            refresh: 1m
+            expire: 2m
+            refresh: 0
       variables:
         ASPNETCORE_URLS: http://*:5005
       ports:
