@@ -11,7 +11,7 @@ spec:
     - name: web-redis-internal
       authentication:
         oauth2:
-          clientId: 5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6
+          clientId: 5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6 # Replace with your own client Id
           scope: openid profile email offline_access
           setXAuthRequestHeaders: true
           setAuthorizationHeader: true
@@ -31,7 +31,7 @@ spec:
     - name: web-redis-external
       authentication:
         oauth2:
-          clientId: 5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6
+          clientId: 5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6 # Replace with your own client Id
           scope: openid profile email offline_access
           setXAuthRequestHeaders: true
           setAuthorizationHeader: true
@@ -51,7 +51,7 @@ spec:
     - name: web-cookie
       authentication:
         oauth2:
-          clientId: 5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6
+          clientId: 5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6 # Replace with your own client Id
           scope: openid profile email offline_access
           setXAuthRequestHeaders: true
           setAuthorizationHeader: true
