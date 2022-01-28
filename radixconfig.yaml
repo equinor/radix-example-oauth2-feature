@@ -8,7 +8,7 @@ spec:
       build:
         from: main
   components:
-    - name: web
+    - name: web-redis-internal
       authentication:
         oauth2:
           clientId: 5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6
@@ -28,6 +28,43 @@ spec:
         requests:
           memory: "300Mi"
           cpu: "1000m"
+    - name: web-redis-external
+      authentication:
+        oauth2:
+          clientId: 5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6
+          scope: openid profile email offline_access
+          setXAuthRequestHeaders: true
+          setAuthorizationHeader: true
+          sessionStoreType: redis
+          redisStore:
+            connectionUrl: rediss://a-redis-cache.redis.cache.windows.net:6380
+      variables:
+        ASPNETCORE_URLS: http://*:5005
+      ports:
+        - name: http
+          port: 5005
+      publicPort: http
+      resources:
+        requests:
+          memory: "300Mi"
+          cpu: "1000m"        
+    - name: web-cookie
+      authentication:
+        oauth2:
+          clientId: 5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6
+          scope: openid profile email offline_access
+          setXAuthRequestHeaders: true
+          setAuthorizationHeader: true
+      variables:
+        ASPNETCORE_URLS: http://*:5005
+      ports:
+        - name: http
+          port: 5005
+      publicPort: http
+      resources:
+        requests:
+          memory: "300Mi"
+          cpu: "1000m"  
     - name: redis
       image: bitnami/redis:latest
       secrets:
