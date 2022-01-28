@@ -50,14 +50,14 @@ spec:
         oauth2:
           clientId: 5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6
           scope: openid profile email offline_access
-          setXAuthRequestHeaders: true
-          setAuthorizationHeader: true
-          sessionStoreType: redis
+          # setXAuthRequestHeaders: true
+          # setAuthorizationHeader: true
+          sessionStoreType: cookie
           redisStore:
             connectionUrl: redis://redis:6379
           cookie:
-            expire: 5m
-            refresh: 1m
+            expire: 2m
+            refresh: 0
       variables:
         ASPNETCORE_URLS: http://*:5005
       ports:
