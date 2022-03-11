@@ -27,7 +27,7 @@ spec:
       resources:
         requests:
           memory: "300Mi"
-          cpu: "1000m"
+          cpu: "50m"
     - name: web-redis-external
       authentication:
         oauth2:
@@ -47,7 +47,7 @@ spec:
       resources:
         requests:
           memory: "300Mi"
-          cpu: "1000m"        
+          cpu: "50m"        
     - name: web-cookie
       authentication:
         oauth2:
@@ -64,7 +64,7 @@ spec:
       resources:
         requests:
           memory: "300Mi"
-          cpu: "1000m"  
+          cpu: "50m"  
     - name: redis
       image: bitnami/redis:latest
       secrets:
