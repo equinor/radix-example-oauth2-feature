@@ -1,4 +1,4 @@
-# Radix OAuth2 feature examplke application
+# Radix OAuth2 feature example application
 
 Sample application demonstrating how to configure oauth2 authentication using  the oauth2 feature in Radix.
 
